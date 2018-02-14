@@ -21,3 +21,14 @@ func ask(message string) string {
 	_ = err
 	return answer
 }
+
+func exists(path string) (bool) {
+	if _, err := os.Stat(path); err != nil {
+		if os.IsExist(err) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	return false;
+}
