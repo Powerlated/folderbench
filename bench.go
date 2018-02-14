@@ -1,3 +1,4 @@
+
 package main
 
 import (
@@ -45,7 +46,7 @@ func bench(foldercount int) {
 	fmt.Println()
 	fmt.Println("Folders per second: " + strconv.Itoa(foldersPerSecond))
 
-	evaluate(finalTime)
+	evaluate(foldersPerSecond)
 	
 	clean()
 
@@ -53,6 +54,7 @@ func bench(foldercount int) {
 
 func clean() {
 	fmt.Println("Cleaning folders, this might take a long time...")
+	
 	os.RemoveAll("fbdir")
 	fmt.Println("Removed fbdir directory")
 }
