@@ -10,13 +10,10 @@ var defaultFoldercount = 250000
 var version = "vl.0"
 
 func main() {
-
-
 	fmt.Println("You have started up folderbench " + version + ".")
 	fmt.Println()
 
-	foldercount := askFolderCount()
-	bench(foldercount)
+	bench(askFolderCount())	
 }
 func askFolderCount() int {
 	foldercount := 0
