@@ -21,7 +21,7 @@ func askFolderCount() int {
 	for askAgain {
 		foldercount_str := ask("How many folders? (type exit to exit): ")
 		if foldercount_str == "exit" {
-			fmt.Println("\nExiting...")
+			fmt.Println("Exiting...")
 			os.Exit(0)
 		}
 		if _, err := strconv.ParseInt(foldercount_str, 10, 64); err != nil {
