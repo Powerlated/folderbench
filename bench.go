@@ -46,11 +46,9 @@ func bench(foldercount int) {
 }
 
 func clean() {
-	if exists("fbdir") {
-		fmt.Println("Cleaning folders, this might take a long time...")
-		os.RemoveAll("fbdir")
-		fmt.Println("Removed fbdir directory")
-	}
+	fmt.Println("Cleaning folders, this might take a long time...")
+	os.RemoveAll("fbdir")
+	fmt.Println("Removed fbdir directory")
 }
 
 func evaluate(time int) {
