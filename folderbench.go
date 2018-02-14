@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-var defaultFoldercount = 1000000
+var defaultFoldercount = 250000
 
 func main() {
 	version := "vl.0"
@@ -17,7 +17,6 @@ func main() {
 	foldercount := askFolderCount()
 	bench(foldercount)
 }
-
 func askFolderCount() int {
 	foldercount := 0
 	askAgain := true
