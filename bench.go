@@ -34,6 +34,10 @@ func bench(foldercount int) {
 
 	finalTime := endTime - startTime
 
+	foldersPerSecond := foldersCreated / finalTime
+
+	print ("Folders per second: " + strconv.Itoa(foldersPerSecond))
+
 	evaluate(finalTime)
 
 }
