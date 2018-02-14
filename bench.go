@@ -19,7 +19,7 @@ func bench(foldercount int) {
 	fmt.Println("Benchmarking with " + strconv.Itoa(foldercount) + " folders")
 
 	foldersCreated := 0
-	for foldersCreated < foldercount+1 {
+	for foldersCreated < foldercount {
 
 		if foldersCreated%10000 == 0 && foldersCreated != 0 {
 			fmt.Println("Made " + strconv.Itoa(foldersCreated) + " folders")
