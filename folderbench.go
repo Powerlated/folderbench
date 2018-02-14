@@ -2,10 +2,7 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"strconv"
-
-	input "github.com/tcnksm/go-input"
 )
 
 var foldercount = 0
@@ -31,20 +28,4 @@ func main() {
 		}
 	}
 
-}
-
-func ask(message string) string {
-	ui := &input.UI{
-		Writer: os.Stdout,
-		Reader: os.Stdin,
-	}
-
-	query := message
-	answer, err := ui.Ask(query, &input.Options{
-		Default:  "",
-		Required: true,
-		Loop:     false,
-	})
-	_ = err
-	return answer
 }
