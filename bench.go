@@ -13,7 +13,7 @@ func bench(foldercount int) {
 
 	startTime := int(time.Now().Unix())
 
-	os.Mkdir("fbdir", 777)
+	os.Mkdir("fbdir", 0777)
 	os.Chdir("fbdir")
 
 	fmt.Println("Benchmarking with " + strconv.Itoa(foldercount) + " folders")
@@ -25,7 +25,7 @@ func bench(foldercount int) {
 			fmt.Println("Made " + strconv.Itoa(foldersCreated) + " folders")
 		}
 
-		os.Mkdir("fbdir"+strconv.Itoa(foldersCreated), 777)
+		os.Mkdir(strconv.Itoa(foldersCreated), 0777)
 		foldersCreated++
 
 	}
@@ -36,7 +36,7 @@ func bench(foldercount int) {
 
 	foldersPerSecond := foldersCreated / finalTime
 
-	print ("Folders per second: " + strconv.Itoa(foldersPerSecond))
+	print("Folders per second: " + strconv.Itoa(foldersPerSecond))
 
 	evaluate(finalTime)
 

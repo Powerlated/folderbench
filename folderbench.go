@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-var defaultFoldercount = 10000
+var defaultFoldercount = 1000000
 
 func main() {
 	version := "vl.0"
