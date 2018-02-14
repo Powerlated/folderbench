@@ -5,14 +5,17 @@ import (
 	"strconv"
 )
 
-var foldercount = 0
-
 func main() {
 	version := "v1.0"
 
 	fmt.Println("You have started up folderbench " + version + ".")
 	fmt.Println()
 
+	askFolderCount()
+}
+
+func askFolderCount() int {
+	foldercount := 0
 	askAgain := true
 	for askAgain {
 		foldercount_str := ask("How many folders? (type exit to exit): ")
@@ -27,5 +30,5 @@ func main() {
 
 		}
 	}
-
+	return foldercount
 }
