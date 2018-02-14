@@ -30,9 +30,15 @@ func bench(foldercount int) {
 
 	}
 
+	os.Chdir("..")
+
 	endTime := int(time.Now().Unix())
 
 	finalTime := endTime - startTime
+
+	if finalTime == 0 {
+		finalTime = 1
+	}
 
 	foldersPerSecond := foldersCreated / finalTime
 
@@ -40,7 +46,7 @@ func bench(foldercount int) {
 	fmt.Println("Folders per second: " + strconv.Itoa(foldersPerSecond))
 
 	evaluate(finalTime)
-
+	
 	clean()
 
 }
