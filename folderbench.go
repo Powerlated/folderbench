@@ -7,9 +7,10 @@ import (
 )
 
 var defaultFoldercount = 250000
+var version = "vl.0"
 
 func main() {
-	version := "vl.0"
+
 
 	fmt.Println("You have started up folderbench " + version + ".")
 	fmt.Println()
