@@ -22,13 +22,13 @@ func ask(message string) string {
 	return answer
 }
 
-func exists(path string) (bool) {
+func exists(path string) bool {
 	if _, err := os.Stat(path); err != nil {
 		if os.IsExist(err) {
-			return true;
+			return true
 		} else {
-			return false;
+			return false
 		}
 	}
-	return false;
+	return false
 }
