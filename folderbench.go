@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"strconv"
 )
 
@@ -19,6 +20,9 @@ func askFolderCount() int {
 	askAgain := true
 	for askAgain {
 		foldercount_str := ask("How many folders? (type exit to exit): ")
+		if foldercount_str == "exit" {
+			os.Exit(0)
+		}
 		if _, err := strconv.ParseInt(foldercount_str, 10, 64); err != nil {
 			fmt.Println("It seems like that is not a number.")
 			fmt.Println()
