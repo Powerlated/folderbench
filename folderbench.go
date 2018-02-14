@@ -11,8 +11,8 @@ func main() {
 	fmt.Println()
 	askAgain := true
 	for askAgain {
-		//foldercount := ask("How many folders?: ")
-
+		foldercount := ask("How many folders?: ")
+		
 	}
 
 }
