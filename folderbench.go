@@ -6,13 +6,16 @@ import (
 	"strconv"
 )
 
+var defaultFoldercount = 10000
+
 func main() {
 	version := "vl.0"
 
 	fmt.Println("You have started up folderbench " + version + ".")
 	fmt.Println()
 
-	askFolderCount()
+	foldercount := askFolderCount()
+	bench(foldercount)
 }
 
 func askFolderCount() int {
@@ -23,8 +26,10 @@ func askFolderCount() int {
 		if foldercount_str == "exit" {
 			fmt.Println("Exiting...")
 			os.Exit(0)
-		}
-		if _, err := strconv.ParseInt(foldercount_str, 10, 64); err != nil {
+		} else if foldercount_str == "" {
+			fmt.Println("It seems like no number has been provided. Using the default of " + strconv.Itoa(defaultFoldercount) + ".")
+			return defaultFoldercount
+		} else if _, err := strconv.ParseInt(foldercount_str, 10, 64); err != nil {
 			fmt.Println("It seems like that is not a number.")
 			fmt.Println()
 		} else {
