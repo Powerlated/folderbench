@@ -9,22 +9,28 @@ import (
 
 func bench(foldercount int) {
 
+	// Prepares the benchmark
 	clean()
 
+	// Get the current Unix time for calculating folders per second later
 	startTime := int(time.Now().Unix())
 
+	// Makes a folder and goes into it
 	os.Mkdir("fbdir", 0777)
 	os.Chdir("fbdir")
 
 	fmt.Println("Benchmarking with " + strconv.Itoa(foldercount) + " folders")
 
 	foldersCreated := 0
+	// Loops as long as the amount of folders created is smaller than the amount of folders specified
 	for foldersCreated < foldercount {
 
+		// Every 10000 folders created, print a progress message
 		if foldersCreated%10000 == 0 && foldersCreated != 0 {
 			fmt.Println("Made " + strconv.Itoa(foldersCreated) + " folders")
 		}
 
+		// Creates the actual folder
 		os.Mkdir(strconv.Itoa(foldersCreated), 0777)
 		foldersCreated++
 
@@ -40,6 +46,7 @@ func bench(foldercount int) {
 		finalTime = 1
 	}
 
+	// Calculates the final folders per second
 	foldersPerSecond := foldersCreated / finalTime
 
 	fmt.Println()
@@ -55,11 +62,13 @@ func bench(foldercount int) {
 
 func clean() {
 	fmt.Println("Cleaning folders, this might take a long time...")
-
+	// Removes the fbdir directory recursively 
 	os.RemoveAll("fbdir")
+
 	fmt.Println("Removed fbdir directory")
 }
 
+// Snarky comment evaluation
 func evaluate(fps int) string {
 	if fps >= 3500 {
 		return "You're on Linux, aren't you?"
