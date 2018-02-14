@@ -6,6 +6,7 @@ import (
 	input "github.com/tcnksm/go-input"
 )
 
+// Use an external library for asking questions
 func ask(message string) string {
 	ui := &input.UI{
 		Writer: os.Stdout,
@@ -22,6 +23,7 @@ func ask(message string) string {
 	return answer
 }
 
+// Check if a file or folder exists
 func exists(path string) bool {
 	if _, err := os.Stat(path); err != nil {
 		if os.IsExist(err) {
